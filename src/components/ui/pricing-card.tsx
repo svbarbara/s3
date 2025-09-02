@@ -1,8 +1,13 @@
 "use client";
 
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { motion, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
@@ -32,7 +37,7 @@ export function PricingCard({
   onButtonClick,
 }: PricingCardProps) {
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, amount: 0.2 });
+  const isInView = useInView(containerRef, { once: true, amount: 0.1 });
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
@@ -46,34 +51,21 @@ export function PricingCard({
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3,
+        staggerChildren: 0.05,
+        delayChildren: 0.1,
+        duration: 0.4,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 10, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
-        stiffness: 260,
-        damping: 20,
-      },
-    },
-  };
-
-  const listItemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 10,
+        duration: 0.3,
+        ease: "easeOut" as const,
       },
     },
   };
@@ -96,8 +88,12 @@ export function PricingCard({
               <CardHeader className="p-0">
                 <div className="flex items-start justify-between">
                   <div>
-                    <CardTitle className="text-3xl font-bold">{title}</CardTitle>
-                    <CardDescription className="mt-2">{description}</CardDescription>
+                    <CardTitle className="text-3xl font-bold">
+                      {title}
+                    </CardTitle>
+                    <CardDescription className="mt-2">
+                      {description}
+                    </CardDescription>
                   </div>
                 </div>
               </CardHeader>
@@ -128,22 +124,21 @@ export function PricingCard({
           >
             <div className="space-y-4">
               {features.map((feature, featureIndex) => (
-                <div key={featureIndex}>
-                  <h3 className="mb-3 text-base font-semibold">{feature.title}:</h3>
+                <div key={featureIndex} className="space-y-3">
+                  <h3 className="mb-3 text-base font-semibold">
+                    {feature.title}:
+                  </h3>
                   <ul className="grid grid-cols-1 gap-2 md:grid-cols-2">
                     {feature.items.map((item, index) => (
-                      <motion.li
-                        key={index}
-                        className="flex items-center"
-                        variants={listItemVariants}
-                        custom={index + featureIndex * feature.items.length}
-                      >
-                        <Check className="mr-2 h-4 w-4 text-primary" />
+                      <li key={index} className="flex items-center">
+                        <Check className="mr-2 h-4 w-4 text-primary flex-shrink-0" />
                         <span className="text-sm">{item}</span>
-                      </motion.li>
+                      </li>
                     ))}
                   </ul>
-                  {featureIndex < features.length - 1 && <Separator className="my-4" />}
+                  {featureIndex < features.length - 1 && (
+                    <Separator className="my-4" />
+                  )}
                 </div>
               ))}
             </div>

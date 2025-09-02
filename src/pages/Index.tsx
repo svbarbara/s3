@@ -61,6 +61,21 @@ const Index = () => {
     plausibleScript.src = "https://plausible.io/js/script.js";
     document.head.appendChild(plausibleScript);
 
+    // Load Google Analytics
+    const gtagScript = document.createElement("script");
+    gtagScript.async = true;
+    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-Y44WDCMX9Z";
+    document.head.appendChild(gtagScript);
+
+    const gtagInlineScript = document.createElement("script");
+    gtagInlineScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y44WDCMX9Z');
+    `;
+    document.head.appendChild(gtagInlineScript);
+
     return () => {
       // Cleanup
       const existingChatbase = document.querySelector(

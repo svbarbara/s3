@@ -119,15 +119,12 @@ export function Globe({
   return (
     <div
       ref={containerRef}
-      className={cn(
-        "absolute inset-0 mx-auto aspect-[1/1] w-full max-w-[500px]",
-        className,
-      )}
+      className={cn("relative mx-auto aspect-[1/1] w-full h-full", className)}
     >
       {isVisible ? (
         <canvas
           className={cn(
-            "size-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]",
+            "w-full h-full opacity-0 transition-opacity duration-500 [contain:layout_paint_size]",
           )}
           ref={canvasRef}
           onPointerDown={(e) =>
@@ -143,7 +140,7 @@ export function Globe({
           }
         />
       ) : (
-        <div className="size-full bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-full opacity-50 animate-pulse" />
+        <div className="w-full h-full bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-full opacity-50 animate-pulse" />
       )}
     </div>
   );

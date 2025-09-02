@@ -39,7 +39,7 @@ export function RemoteSectionWithGlobe() {
       className="min-h-screen flex items-center py-16 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900"
       dir={dir}
     >
-      <div className="section-container">
+      <div className="section-container-wide">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.div
@@ -73,10 +73,10 @@ export function RemoteSectionWithGlobe() {
         </div>
 
         {/* Features and Globe Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 xl:grid-cols-5 gap-16 items-center mb-16">
           {/* Features Grid - Left Side */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-fr"
+            className="xl:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-fr"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -113,13 +113,13 @@ export function RemoteSectionWithGlobe() {
           </motion.div>
 
           {/* Globe - Right Side */}
-          <div className="flex justify-center lg:justify-end">
+          <div className="xl:col-span-2 flex justify-center items-center min-h-[400px] md:min-h-[500px] xl:min-h-[600px] xl:justify-end">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true, amount: 0.3 }}
-              className="relative flex size-full max-w-lg items-center justify-center overflow-hidden h-[500px]"
+              className="relative w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] md:w-[500px] md:h-[500px] xl:w-[600px] xl:h-[600px] flex items-center justify-center overflow-visible"
             >
               <GlobeComponent className="top-0" />
               <div className="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.15),rgba(255,255,255,0))]" />

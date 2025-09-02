@@ -73,7 +73,7 @@ export function RemoteSectionWithGlobe() {
         </div>
 
         {/* Features and Globe Layout */}
-        <div className="grid grid-cols-1 xl:grid-cols-5 gap-16 items-center mb-16">
+        <div className="grid grid-cols-1 xl:grid-cols-5 gap-16 items-start mb-16">
           {/* Features Grid - Left Side */}
           <motion.div
             className="xl:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-fr"
@@ -113,15 +113,15 @@ export function RemoteSectionWithGlobe() {
           </motion.div>
 
           {/* Globe - Right Side */}
-          <div className="xl:col-span-2 flex justify-center items-center min-h-[400px] md:min-h-[500px] xl:min-h-[600px] xl:justify-end">
+          <div className="xl:col-span-2 flex justify-center items-start min-h-[320px] md:min-h-[420px] xl:min-h-[520px] xl:justify-end xl:pr-8 xl:pt-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true, amount: 0.3 }}
-              className="relative w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] md:w-[500px] md:h-[500px] xl:w-[600px] xl:h-[600px] flex items-center justify-center overflow-visible"
+              className="relative w-full h-full max-w-[280px] max-h-[280px] sm:max-w-[320px] sm:max-h-[320px] md:max-w-[380px] md:max-h-[380px] lg:max-w-[420px] lg:max-h-[420px] xl:max-w-[480px] xl:max-h-[480px] flex items-center justify-center"
             >
-              <GlobeComponent className="top-0" />
+              <GlobeComponent className="absolute inset-0 mx-auto aspect-[1/1] w-full" />
               <div className="pointer-events-none absolute inset-0 h-full bg-[radial-gradient(circle_at_50%_200%,rgba(0,0,0,0.15),rgba(255,255,255,0))]" />
             </motion.div>
           </div>

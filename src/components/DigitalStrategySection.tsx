@@ -92,7 +92,11 @@ export function DigitalStrategySection() {
   };
 
   return (
-    <section id="digital-strategy" className="bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-blue-950 dark:via-slate-900 dark:to-indigo-950 py-16 md:py-24" dir={dir}>
+    <section 
+      id="digital-strategy" 
+      className="py-20 bg-gradient-to-br from-background via-accent/5 to-background"
+      dir={dir}
+    >
       <div className="section-container">
         <div className="text-center mb-12">
           <Badge variant="secondary" className="mb-4 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">

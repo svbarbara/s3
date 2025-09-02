@@ -8,6 +8,7 @@ import { RemoteSectionWithGlobe } from "@/components/RemoteSectionWithGlobe";
 import { TeamSection } from "@/components/TeamSection";
 import { FAQ } from "@/components/FAQ";
 import { LegalVehicleSection } from "@/components/LegalVehicleSection";
+import { FinancingSection } from "@/components/FinancingSection";
 import { CalWidget } from "@/components/CalWidget";
 import { Footer } from "@/components/Footer";
 import { SocialMeta } from "@/components/SocialMeta";
@@ -88,6 +89,7 @@ const Index = () => {
           <RemoteSectionWithGlobe />
           <TeamSection />
           <LegalVehicleSection />
+          <FinancingSection />
           <DigitalStrategySection />
           <FAQ />
           <CalWidget />

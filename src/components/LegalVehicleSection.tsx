@@ -74,7 +74,11 @@ export function LegalVehicleSection() {
   ];
 
   return (
-    <section id="legal-vehicle" className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900" dir={dir}>
+    <section 
+      id="legal" 
+      className="py-20 bg-gradient-to-br from-background via-accent/5 to-background"
+      dir={dir}
+    >
       <div className="section-container">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">

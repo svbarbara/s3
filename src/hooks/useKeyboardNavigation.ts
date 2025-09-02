@@ -16,7 +16,9 @@ export function useKeyboardNavigation() {
     'bento-offer',
     'remote',
     'team',
-    'testimonials',
+    'legal',
+    'financing',
+    'digital-strategy',
     'faq',
     'cal-widget'
   ];
@@ -39,15 +41,26 @@ export function useKeyboardNavigation() {
     setSections(foundSections);
   }, []);
 
-  // Function to scroll to a section
+  // Function to scroll to a section with slide effect
   const scrollToSection = (index: number) => {
     if (index >= 0 && index < sections.length) {
       const section = sections[index];
+      
+      // Add slide effect class to body
+      document.body.classList.add('sliding-navigation');
+      
+      // Scroll to section
       section.element.scrollIntoView({ 
         behavior: 'smooth', 
         block: 'start' 
       });
+      
       setCurrentSection(index);
+      
+      // Remove slide effect class after animation completes
+      setTimeout(() => {
+        document.body.classList.remove('sliding-navigation');
+      }, 800);
     }
   };
 

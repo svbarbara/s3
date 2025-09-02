@@ -238,6 +238,14 @@ const translations = {
     'footer.legal.terms': 'CGV',
     'footer.legal.compliance': 'Conformité',
     'footer.support.help': 'Centre d\'aide',
+    
+    // Financing Section
+    'financing.title': 'Financements',
+    'financing.subtitle': 'Lancez votre entreprise avec un soutien financier complet',
+    'financing.description1': 'Chez Suites Ventures, nous comprenons que les entrepreneurs d\'aujourd\'hui recherchent des solutions intelligentes pour lancer et optimiser leurs activités à l\'international, notamment lorsqu\'ils sont nomades digitaux. C\'est pourquoi nous offrons la possibilité de financer intégralement la création de votre société, la formation qui l\'accompagne, et même la mise en place de votre site internet grâce aux dispositifs de financement comme le CPF ou les OPCO.',
+    'financing.description2': 'En clair, vous pouvez lancer votre entreprise et développer votre présence en ligne avec un soutien financier complet, sans alourdir votre budget.',
+    'financing.description3': 'N\'hésitez pas à nous contacter pour en savoir plus sur ces opportunités et démarrer votre aventure entrepreneuriale avec l\'esprit tranquille.',
+    'financing.cta': 'En savoir plus sur les financements',
     'footer.support.resources': 'Guides & Ressources',
     'footer.support.chatbot': 'Chatbot IA',
     'footer.support.contact': 'Nous contacter',

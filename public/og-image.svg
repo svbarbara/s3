@@ -1,0 +1,50 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00486D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Dubai skyline silhouette -->
+  <path d="M0 450 L100 420 L150 380 L200 360 L250 340 L300 320 L350 300 L400 280 L450 260 L500 240 L550 220 L600 200 L650 180 L700 160 L750 140 L800 120 L850 100 L900 120 L950 140 L1000 160 L1050 180 L1100 200 L1150 220 L1200 240 L1200 630 L0 630 Z" fill="#334155" opacity="0.3"/>
+  
+  <!-- Logo area -->
+  <rect x="60" y="60" width="80" height="80" fill="url(#brandGradient)"/>
+  <text x="100" y="110" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="28" font-weight="bold">SV</text>
+  
+  <!-- Company name -->
+  <text x="160" y="100" fill="white" font-family="Arial, sans-serif" font-size="32" font-weight="bold">Suites Ventures</text>
+  <text x="160" y="130" fill="#94a3b8" font-family="Arial, sans-serif" font-size="18">Expert en création d'entreprises internationales</text>
+  
+  <!-- Main title -->
+  <text x="60" y="220" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="bold">Votre</text>
+  <text x="60" y="280" fill="url(#brandGradient)" font-family="Arial, sans-serif" font-size="48" font-weight="bold">LLC US 🇺🇸</text>
+  <text x="60" y="340" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="bold">ou</text>
+  <text x="60" y="400" fill="url(#brandGradient)" font-family="Arial, sans-serif" font-size="48" font-weight="bold">Free Zone Dubai 🇦🇪</text>
+  <text x="60" y="460" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="bold">créée en</text>
+  <text x="60" y="520" fill="#10b981" font-family="Arial, sans-serif" font-size="48" font-weight="bold">3 clics seulement</text>
+  
+  <!-- Right side features -->
+  <rect x="720" y="200" width="420" height="280" rx="20" fill="#1e293b" opacity="0.8"/>
+  <text x="750" y="240" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">✓ LLC ou Free Zone</text>
+  <text x="750" y="280" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">✓ Compte bancaire pro</text>
+  <text x="750" y="320" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">✓ Support dédié 24/7</text>
+  <text x="750" y="360" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">✓ 100% Digital</text>
+  <text x="750" y="400" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">✓ Conformité internationale</text>
+  
+  <!-- Price badge -->
+  <rect x="750" y="430" width="200" height="40" rx="20" fill="#10b981"/>
+  <text x="850" y="455" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">1490 USD Offre Lancement</text>
+  
+  <!-- Bottom URL -->
+  <text x="60" y="580" fill="#64748b" font-family="Arial, sans-serif" font-size="20">suitescorp.com</text>
+</svg>

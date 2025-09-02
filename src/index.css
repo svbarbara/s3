@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Suites Ventures Design System - Brand Colors & Typography */
+
+@layer base {
+  :root {
+    /* Suites Ventures Brand Palette */
+    --primary-dark: 198 100% 13%;    /* #002B41 */
+    --primary: 200 100% 21%;         /* #00486D */
+    --accent-light: 225 20% 74%;     /* #B6BCCE */
+    --accent: 208 96% 86%;           /* #BBE0FD */
+    --neutral-light: 210 20% 98%;    /* #F9FAFB */
+    --neutral-dark: 222 84% 5%;      /* #0F172A */
+    
+    /* Semantic tokens */
+    --background: 210 20% 98%;
+    --foreground: 222 84% 5%;
+
+    --card: 210 20% 98%;
+    --card-foreground: 222 84% 5%;
+
+    --popover: 210 20% 98%;
+    --popover-foreground: 222 84% 5%;
+
+    --primary: 200 100% 21%;          /* Brand primary */
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 208 96% 86%;         /* Brand accent */
+    --secondary-foreground: 198 100% 13%;
+
+    --muted: 225 20% 74%;
+    --muted-foreground: 198 100% 13%;
+
+    --accent: 208 96% 86%;            /* Brand accent light */
+    --accent-foreground: 198 100% 13%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 84% 5%;         /* Neutral dark */
+    --foreground: 210 20% 98%;
+
+    --card: 222 84% 5%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 222 84% 5%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 208 96% 86%;           /* Accent becomes primary in dark */
+    --primary-foreground: 222 84% 5%;
+
+    --secondary: 198 100% 13%;        /* Primary dark in dark mode */
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 225 20% 20%;
+    --muted-foreground: 208 96% 86%;
+
+    --accent: 225 20% 20%;
+    --accent-foreground: 208 96% 86%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Smooth theme transitions - optimized for performance */
+  .theme-transitioning {
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    transition-delay: 0s !important;
+  }
+  
+  .theme-transitioning * {
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+
+  /* Prevent flash during theme change */
+  .theme-transitioning img,
+  .theme-transitioning video {
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+}
+
+/* Brand-specific utilities */
+@layer components {
+  .brand-gradient {
+    @apply bg-gradient-to-r from-primary via-primary-dark to-secondary;
+  }
+  
+  .brand-gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .hero-section {
+    @apply bg-gradient-to-br from-neutral-light via-accent/10 to-neutral-light;
+    transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .dark .hero-section {
+    @apply bg-gradient-to-br from-neutral-dark via-primary/10 to-neutral-dark;
+  }
+  
+  .cta-button {
+    @apply bg-primary hover:bg-primary-dark text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105;
+  }
+  
+  .card-elevated {
+    @apply bg-card border border-border rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+
+  /* Unified shadow system for consistency */
+  .shadow-unified {
+    @apply shadow-lg hover:shadow-xl transition-all duration-300;
+  }
+  
+  .shadow-unified-sm {
+    @apply shadow-sm hover:shadow-lg transition-all duration-300;
+  }
+
+  /* Theme-aware components */
+  .theme-aware {
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Unified Container System */
+  .section-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1200px; /* Unified max-width for all sections */
+  }
+  
+  .section-container-wide {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1400px; /* For sections that need more space */
+  }
+  
+  .section-container-narrow {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 800px; /* For content-focused sections like FAQ */
+  }
+
+  /* Subtle theme indicator */
+  .theme-indicator {
+    position: relative;
+  }
+
+  .theme-indicator::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: hsl(var(--primary));
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .theme-indicator.active::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-['Inter'] antialiased;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Playfair_Display'] font-semibold;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Optimize animations for performance */
+  * {
+    will-change: auto;
+  }
+  
+  /* Reduce paint and composite layers */
+  .theme-aware {
+    contain: layout;
+  }
+  
+  /* RTL Support */
+  [dir="rtl"] {
+    direction: rtl;
+  }
+  
+  [dir="rtl"] .rtl-flip {
+    transform: scaleX(-1);
+  }
+
+  /* RTL-specific adjustments */
+  [dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+  }
+
+  [dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+  }
+
+  [dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+  }
+
+  [dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+  }
+
+  /* RTL text alignment */
+  [dir="rtl"] .text-left {
+    text-align: right;
+  }
+
+  [dir="rtl"] .text-right {
+    text-align: left;
+  }
+
+  /* RTL positioning */
+  [dir="rtl"] .left-4 {
+    left: auto;
+    right: 1rem;
+  }
+
+  [dir="rtl"] .right-4 {
+    right: auto;
+    left: 1rem;
+  }
+
+  /* RTL margins and paddings */
+  [dir="rtl"] .ml-2 {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+
+  [dir="rtl"] .mr-2 {
+    margin-right: 0;
+    margin-left: 0.5rem;
+  }
+
+  /* RTL transforms for icons */
+  [dir="rtl"] .group-hover\:translate-x-1 {
+    --tw-translate-x: -0.25rem;
+  }
+
+  /* Arabic font optimization */
+  [dir="rtl"] {
+    font-family: 'Inter', 'Noto Sans Arabic', 'Arial', sans-serif;
+  }
+
+  [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+    font-family: 'Playfair Display', 'Noto Sans Arabic', 'Arial', sans-serif;
+    line-height: 1.4;
+  }
+}
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .theme-transitioning,
+    .theme-transitioning *,
+    .theme-transitioning *:before,
+    .theme-transitioning *:after {
+      transition-duration: 0.01ms !important;
+    }
+  }
+  /* === HERO BACKGROUND WITH MODERN FORMATS === */
+.hero-bg {
+  /* Fallback tous navigateurs */
+  background-image: url("/dubai-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Formats modernes si supportés */
+@supports (background-image: image-set(url("") type("image/avif"))) {
+  .hero-bg {
+    background-image: image-set(
+      url("/dubai-bg.avif") type("image/avif"),
+      url("/dubai-bg.webp") type("image/webp"),
+      url("/dubai-bg.jpg") type("image/jpeg")
+    );
+  }
+}

@@ -1,0 +1,17 @@
+<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="appleBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00486D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="180" height="180" fill="url(#appleBg)"/>
+  
+  <!-- Logo -->
+  <text x="90" y="110" text-anchor="middle" fill="white" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="64" font-weight="bold">SV</text>
+  
+  <!-- Subtitle -->
+  <text x="90" y="140" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="500">SUITES VENTURES</text>
+</svg>

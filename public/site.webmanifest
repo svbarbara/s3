@@ -1,0 +1,25 @@
+{
+    "name": "Suites Ventures - Création LLC US & Free Zone Dubai",
+    "short_name": "Suites Ventures",
+    "description": "Expert en création d'entreprises internationales. LLC US, Free Zone Dubai, ouverture bancaire et accompagnement fiscal.",
+    "icons": [
+        {
+            "src": "/apple-touch-icon.svg",
+            "sizes": "180x180",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "/favicon.ico",
+            "sizes": "32x32",
+            "type": "image/x-icon"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#00486D",
+    "background_color": "#0f172a",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "fr",
+    "categories": ["business", "finance", "legal"]
+}

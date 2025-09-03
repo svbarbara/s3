@@ -246,6 +246,8 @@ const translations = {
     'financing.description2': 'En clair, vous pouvez lancer votre entreprise et développer votre présence en ligne avec un soutien financier complet, sans alourdir votre budget.',
     'financing.description3': 'N\'hésitez pas à nous contacter pour en savoir plus sur ces opportunités et démarrer votre aventure entrepreneuriale avec l\'esprit tranquille.',
     'financing.cta': 'En savoir plus sur les financements',
+    'financing.mini_card.text': 'Vous pouvez également financer intégralement la création de votre société grâce au CPF ou aux OPCO.',
+    'financing.mini_card.cta': 'En savoir plus sur les financements',
     'footer.support.resources': 'Guides & Ressources',
     'footer.support.chatbot': 'Chatbot IA',
     'footer.support.contact': 'Nous contacter',
@@ -546,6 +548,16 @@ const translations = {
     'cal.step2.description': 'Proposal adapted to your project',
     'cal.step3.title': 'Fast creation',
     'cal.step3.description': 'Your business created in 48h',
+    
+    // Financing Section
+    'financing.title': 'Financing',
+    'financing.subtitle': 'Launch your business with full financial support',
+    'financing.description1': 'At Suites Ventures, we understand that today\'s entrepreneurs are looking for smart solutions to start and optimize their international business, especially when they are digital nomads. That\'s why we offer the possibility to fully finance the creation of your company, the training that accompanies it, and even the development of your website through funding programs like CPF or OPCO.',
+    'financing.description2': 'In short, you can launch your business and develop your online presence with full financial support, without increasing your budget.',
+    'financing.description3': 'Feel free to contact us to learn more about these opportunities and start your entrepreneurial adventure with peace of mind.',
+    'financing.cta': 'Learn more about financing',
+    'financing.mini_card.text': 'You can also fully finance the creation of your company through CPF or OPCO.',
+    'financing.mini_card.cta': 'Learn more about financing',
     
     // Remote Section
     'remote.title.remote': 'Remote',
@@ -883,6 +895,16 @@ const translations = {
     'cal.step2.description': 'اقتراح مكيف مع مشروعك',
     'cal.step3.title': 'إنشاء سريع',
     'cal.step3.description': 'شركتك منشأة في 48 ساعة',
+    
+    // Financing Section
+    'financing.title': 'التمويل',
+    'financing.subtitle': 'أطلق مشروعك مع دعم مالي كامل',
+    'financing.description1': 'في سويتس فنتشرز، نفهم أن رواد الأعمال اليوم يبحثون عن حلول ذكية لبدء وتحسين أعمالهم الدولية، خاصة عندما يكونون رحالات رقميين. لهذا السبب نقدم إمكانية تمويل إنشاء شركتك بالكامل، والتدريب المرافق لها، وحتى إنشاء موقعك الإلكتروني من خلال برامج التمويل مثل CPF أو OPCO.',
+    'financing.description2': 'باختصار، يمكنك إطلاق مشروعك وتطوير حضورك الرقمي مع دعم مالي كامل، دون زيادة ميزانيتك.',
+    'financing.description3': 'لا تتردد في الاتصال بنا لمعرفة المزيد عن هذه الفرص وبدء مغامرتك في ريادة الأعمال براحة البال.',
+    'financing.cta': 'تعرف على المزيد حول التمويل',
+    'financing.mini_card.text': 'يمكنك أيضًا تمويل إنشاء شركتك بالكامل من خلال CPF أو OPCO.',
+    'financing.mini_card.cta': 'تعرف على المزيد حول التمويل',
     
     // Remote Section
     'remote.title.remote': 'عمل',

@@ -1,7 +1,9 @@
 import { Check, Star, Zap, Shield, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export function OfferSection() {
+  const { t } = useTranslation();
   const features = [
     "Constitution LLC ou Free Zone Dubai",
     "Documents légaux complets (EIN, Operating Agreement)",
@@ -59,7 +61,25 @@ export function OfferSection() {
                       1,490<span className="text-2xl">USD</span>
                     </div>
                     <div className="text-muted-foreground">
-                      Paiement unique · Tout inclus
+                      {t('offer.price.note')} · Tout inclus
+                    </div>
+                    
+                    {/* Mini carte Financements */}
+                    <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-xl border border-blue-200 dark:border-blue-800 shadow-sm">
+                      <p className="text-sm text-blue-800 dark:text-blue-200 mb-3">
+                        Vous pouvez également financer intégralement la création de votre société grâce au CPF ou aux OPCO.
+                      </p>
+                      <button 
+                        className="text-sm font-medium text-blue-600 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-100 transition-colors duration-200"
+                        onClick={() => {
+                          const financingSection = document.getElementById('financing');
+                          if (financingSection) {
+                            financingSection.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }}
+                      >
+                        En savoir plus sur les financements →
+                      </button>
                     </div>
                   </div>
 

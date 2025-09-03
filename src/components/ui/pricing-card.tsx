@@ -11,6 +11,7 @@ import { useEffect, useRef, useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { useTranslation } from "@/hooks/useTranslation";
 
 interface PricingFeature {
   title: string;
@@ -36,6 +37,7 @@ export function PricingCard({
   buttonText = "Get Started",
   onButtonClick,
 }: PricingCardProps) {
+  const { t } = useTranslation();
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.1 });
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -107,8 +109,26 @@ export function PricingCard({
                   )}
                 </div>
                 <span className="block text-sm text-muted-foreground">
-                  one-time payment
+                  {t('offer.price.note')}
                 </span>
+                
+                {/* Mini carte Financements */}
+                <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-xl border border-blue-200 dark:border-blue-800 shadow-sm">
+                  <p className="text-sm text-blue-800 dark:text-blue-200 mb-3">
+                    {t('financing.mini_card.text')}
+                  </p>
+                  <button 
+                    className="text-sm font-medium text-blue-600 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-100 transition-colors duration-200"
+                    onClick={() => {
+                      const financingSection = document.getElementById('financing');
+                      if (financingSection) {
+                        financingSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                  >
+                    {t('financing.mini_card.cta')} →
+                  </button>
+                </div>
               </motion.div>
             </div>
             <motion.div className="mt-8" variants={itemVariants}>

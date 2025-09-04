@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { getInitialLanguage } from '@/lib/language-detection';
 
 type Language = 'fr' | 'en' | 'ar';
 
@@ -7,6 +8,7 @@ interface TranslationContextType {
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
   dir: 'ltr' | 'rtl';
+  isLanguageDetected: boolean;
 }
 
 const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
@@ -1058,18 +1060,45 @@ const translations = {
 };
 
         export function TranslationProvider({ children }: { children: React.ReactNode }) {
-          const [language, setLanguage] = useState<Language>(() => {
-            if (typeof window !== 'undefined') {
-              return (localStorage.getItem('language') as Language) || 'fr';
-            }
-            return 'fr';
-          });
+          const [language, setLanguage] = useState<Language>('fr'); // Valeur initiale temporaire
+          const [isLanguageDetected, setIsLanguageDetected] = useState(false);
 
+          // Effet pour détecter automatiquement la langue au chargement
           useEffect(() => {
-            localStorage.setItem('language', language);
-            document.documentElement.lang = language;
-            document.documentElement.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
-          }, [language]);
+            const detectAndSetLanguage = async () => {
+              try {
+                const detectedLanguage = await getInitialLanguage();
+                setLanguage(detectedLanguage);
+                setIsLanguageDetected(true);
+                console.log('🌍 Language auto-detected and set to:', detectedLanguage);
+              } catch (error) {
+                console.warn('⚠️ Language detection failed, using default (fr):', error);
+                setLanguage('fr');
+                setIsLanguageDetected(true);
+              }
+            };
+
+            detectAndSetLanguage();
+          }, []);
+
+          // Wrapper pour setLanguage qui sauvegarde aussi dans localStorage
+          const handleSetLanguage = (lang: Language) => {
+            setLanguage(lang);
+            if (typeof window !== 'undefined') {
+              localStorage.setItem('language', lang);
+            }
+            console.log('👤 Language manually changed to:', lang);
+          };
+
+          // Effet pour mettre à jour le DOM et localStorage après détection/changement de langue
+          useEffect(() => {
+            if (isLanguageDetected) {
+              localStorage.setItem('language', language);
+              document.documentElement.lang = language;
+              document.documentElement.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+              console.log('📝 Language updated in DOM and localStorage:', language);
+            }
+          }, [language, isLanguageDetected]);
 
           const t = (key: string): string => {
             return translations[language][key] || key;
@@ -1078,7 +1107,7 @@ const translations = {
           const dir = language === 'ar' ? 'rtl' : 'ltr';
 
           return (
-            <TranslationContext.Provider value={{ language, setLanguage, t, dir }}>
+            <TranslationContext.Provider value={{ language, setLanguage: handleSetLanguage, t, dir, isLanguageDetected }}>
               {children}
             </TranslationContext.Provider>
           );

@@ -15,6 +15,7 @@ import { SocialMeta } from "@/components/SocialMeta";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { TranslationProvider } from "@/hooks/useTranslation";
 import { useKeyboardNavigation } from "@/hooks/useKeyboardNavigation";
+import { LanguageDetectionDebug } from "@/components/LanguageDetectionDebug";
 
 const Index = () => {
   // Initialize keyboard navigation
@@ -109,6 +110,7 @@ const Index = () => {
           <FAQ />
           <CalWidget />
           <Footer />
+          <LanguageDetectionDebug />
         </div>
       </ThemeProvider>
     </TranslationProvider>

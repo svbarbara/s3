@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { useTranslation } from "@/hooks/useTranslation";
+import { AwardBadge } from "@/components/ui/award-badge";
 
 interface PricingFeature {
   title: string;
@@ -112,22 +113,57 @@ export function PricingCard({
                   {t('offer.price.note')}
                 </span>
                 
-                {/* Mini carte Financements */}
-                <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-xl border border-blue-200 dark:border-blue-800 shadow-sm">
-                  <p className="text-sm text-blue-800 dark:text-blue-200 mb-3">
-                    {t('financing.mini_card.text')}
-                  </p>
-                  <button 
-                    className="text-sm font-medium text-blue-600 dark:text-blue-300 hover:text-blue-800 dark:hover:text-blue-100 transition-colors duration-200"
-                    onClick={() => {
-                      const financingSection = document.getElementById('financing');
-                      if (financingSection) {
-                        financingSection.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                  >
-                    {t('financing.mini_card.cta')} →
-                  </button>
+                {/* Nouvelle mini carte Financements repensée */}
+                <div className="mt-4 relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-slate-800 dark:via-blue-900/30 dark:to-indigo-900/30 rounded-xl border border-blue-200/60 dark:border-blue-700/50 shadow-lg">
+                  {/* Background pattern subtil */}
+                  <div className="absolute inset-0 opacity-5">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(59,130,246,0.3)_1px,transparent_0)] [background-size:20px_20px]"></div>
+                  </div>
+                  
+                  {/* Contenu */}
+                  <div className="relative p-5">
+                    {/* Header avec icône */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center shadow-md">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                        </svg>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900 dark:text-white text-sm">
+                          💰 Financement possible
+                        </h4>
+                        <p className="text-xs text-slate-600 dark:text-slate-400">
+                          CPF • OPCO • Formation
+                        </p>
+                      </div>
+                    </div>
+                    
+                    {/* Description */}
+                    <p className="text-sm text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">
+                      {t('financing.mini_card.text')} <span className="font-medium text-blue-700 dark:text-blue-300">Financez intégralement votre projet</span> sans frais personnels.
+                    </p>
+                    
+                    {/* Badge CTA intégré comme bouton principal */}
+                    <div className="transform hover:scale-[1.02] transition-transform duration-200">
+                      <AwardBadge 
+                        type="product-of-the-day"
+                        customText="Voir les Financements"
+                        size="full"
+                        onClick={() => {
+                          const financingSection = document.getElementById('financing');
+                          if (financingSection) {
+                            financingSection.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }}
+                      />
+                    </div>
+                    
+                    {/* Note discrète */}
+                    <p className="text-xs text-center text-slate-500 dark:text-slate-400 mt-2 opacity-80">
+                      ✨ Jusqu'à 100% pris en charge
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             </div>

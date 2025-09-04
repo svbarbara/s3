@@ -1,6 +1,8 @@
 import { Check, Star, Zap, Shield, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/useTranslation';
+import { AwardBadge } from '@/components/ui/award-badge';
+import { SimpleAwardBadge } from '@/components/ui/simple-award-badge';
 
 export function OfferSection() {
   const { t } = useTranslation();
@@ -64,8 +66,15 @@ export function OfferSection() {
                       {t('offer.price.note')} · Tout inclus
                     </div>
                     
+                    {/* Badge test direct en HTML */}
+                    <div className="flex justify-center mt-4 mb-2 bg-yellow-300 border-4 border-red-500 p-8">
+                      <div className="bg-blue-600 text-white text-2xl font-bold px-8 py-4 rounded-lg">
+                        🏆 BADGE TEST VISIBLE 🏆
+                      </div>
+                    </div>
+                    
                     {/* Mini carte Financements */}
-                    <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-xl border border-blue-200 dark:border-blue-800 shadow-sm">
+                    <div className="mt-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-xl border border-blue-200 dark:border-blue-800 shadow-sm">
                       <p className="text-sm text-blue-800 dark:text-blue-200 mb-3">
                         Vous pouvez également financer intégralement la création de votre société grâce au CPF ou aux OPCO.
                       </p>

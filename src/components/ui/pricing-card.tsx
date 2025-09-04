@@ -148,7 +148,7 @@ export function PricingCard({
                     <div className="transform hover:scale-[1.02] transition-transform duration-200">
                       <AwardBadge 
                         type="product-of-the-day"
-                        customText="Voir les Financements"
+                        customText={t('financing.mini_card.badge')}
                         size="full"
                         onClick={() => {
                           const financingSection = document.getElementById('financing');

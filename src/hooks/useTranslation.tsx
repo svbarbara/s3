@@ -248,6 +248,7 @@ const translations = {
     'financing.cta': 'En savoir plus sur les financements',
     'financing.mini_card.text': 'Vous pouvez également financer intégralement la création de votre société grâce au CPF ou aux OPCO.',
     'financing.mini_card.cta': 'En savoir plus sur les financements',
+    'financing.mini_card.badge': 'Voir les Financements',
     'footer.support.resources': 'Guides & Ressources',
     'footer.support.chatbot': 'Chatbot IA',
     'footer.support.contact': 'Nous contacter',
@@ -558,6 +559,7 @@ const translations = {
     'financing.cta': 'Learn more about financing',
     'financing.mini_card.text': 'You can also fully finance the creation of your company through CPF or OPCO.',
     'financing.mini_card.cta': 'Learn more about financing',
+    'financing.mini_card.badge': 'View Financing Options',
     
     // Remote Section
     'remote.title.remote': 'Remote',
@@ -905,6 +907,7 @@ const translations = {
     'financing.cta': 'تعرف على المزيد حول التمويل',
     'financing.mini_card.text': 'يمكنك أيضًا تمويل إنشاء شركتك بالكامل من خلال CPF أو OPCO.',
     'financing.mini_card.cta': 'تعرف على المزيد حول التمويل',
+    'financing.mini_card.badge': 'View Financing Options',
     
     // Remote Section
     'remote.title.remote': 'عمل',

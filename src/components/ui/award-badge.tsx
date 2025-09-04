@@ -1,4 +1,5 @@
 import React, { MouseEvent, useEffect, useRef, useState } from "react";
+import { useTranslation } from "@/hooks/useTranslation";
 
 type AwardBadgeType = "golden-kitty" | "product-of-the-day" | "product-of-the-month" | "product-of-the-week";
 
@@ -32,6 +33,7 @@ const title = {
 };
 
 export const AwardBadge = ({ type, place, link, size = "default", customText, onClick }: AwardBadgeProps) => {
+  const { dir } = useTranslation();
   const ref = useRef<HTMLDivElement>(null);
   const [firstOverlayPosition, setFirstOverlayPosition] = useState<number>(0);
   const [matrix, setMatrix] = useState<string>(identityMatrix);
@@ -207,6 +209,8 @@ export const AwardBadge = ({ type, place, link, size = "default", customText, on
           ? "w-full" 
           : "w-[180px] sm:w-[260px]"
       }`}
+      style={{ direction: 'ltr' }}
+      dir="ltr"
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
       onMouseEnter={onMouseEnter}
@@ -221,13 +225,19 @@ export const AwardBadge = ({ type, place, link, size = "default", customText, on
           transition: "transform 200ms ease-out"
         }}
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 54" className={`h-auto ${
-          size === "small" 
-            ? "w-[120px] sm:w-[160px]" 
-            : size === "full"
-            ? "w-full" 
-            : "w-[180px] sm:w-[260px]"
-        }`}>
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 260 54" 
+          className={`h-auto ${
+            size === "small" 
+              ? "w-[120px] sm:w-[160px]" 
+              : size === "full"
+              ? "w-full" 
+              : "w-[180px] sm:w-[260px]"
+          }`}
+          style={{ direction: 'ltr' }}
+          dir="ltr"
+        >
           <defs>
             <filter id="blur1">
               <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
@@ -238,10 +248,29 @@ export const AwardBadge = ({ type, place, link, size = "default", customText, on
           </defs>
           <rect width="260" height="54" rx="10" fill={backgroundColor[(place || 2) - 1] || backgroundColor[1]} />
           <rect x="4" y="4" width="252" height="46" rx="8" fill="transparent" stroke="#bbb" strokeWidth="1" />
-          <text fontFamily="Helvetica-Bold, Helvetica" fontSize="9" fontWeight="bold" fill="#666" x="53" y="20">
+          <text 
+            fontFamily="Helvetica-Bold, Helvetica" 
+            fontSize="9" 
+            fontWeight="bold" 
+            fill="#666" 
+            x="53" 
+            y="20"
+            direction="ltr"
+            textAnchor="start"
+          >
             SUITES VENTURES
           </text>
-          <text fontFamily="Helvetica-Bold, Helvetica" fontSize="16" fontWeight="bold" fill="#666" x="52" y="40">
+          <text 
+            fontFamily="Helvetica-Bold, Helvetica" 
+            fontSize="16"
+            fontWeight="bold" 
+            fill="#666" 
+            x="52"
+            y="40"
+            direction="ltr"
+            textAnchor="start"
+            dominantBaseline="middle"
+          >
             {customText || `${title[type]}${place ? ` #${place}` : ''}`}
           </text>
           <g transform="translate(8, 9)">
